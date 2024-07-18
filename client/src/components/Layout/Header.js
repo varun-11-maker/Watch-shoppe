@@ -3,14 +3,14 @@ import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
-// import useCategory from "../../hooks/useCategory";
-// import { useCart } from "../../context/cart";
-// import { Badge } from "antd";
+import useCategory from "../../hooks/useCategory";
+import { useCart } from "../../context/cart";
+import { Badge } from "antd";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
-  // const [cart] = useCart();
-  // const categories = useCategory();  
+  const [cart] = useCart();
+  const categories = useCategory();  
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -46,7 +46,7 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-              {/* <li className="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
                   to={"/categories"}
@@ -71,7 +71,7 @@ const Header = () => {
                     </li>
                   ))}
                 </ul>
-              </li> */}
+              </li>
 
               {!auth?.user ? (
                 <>
@@ -123,10 +123,10 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
-                  {/* {/* <Badge count={cart?.length} showZero offset={[10, -5]}> */}
+              <NavLink to="/cart" className="nav-link">
+                  <Badge count={cart?.length} showZero offset={[10, -5]}>
                     Cart
-                  {/* </Badge> */} 
+                  </Badge>
                 </NavLink>
               </li>
             </ul>
