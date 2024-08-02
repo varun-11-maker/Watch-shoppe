@@ -10,7 +10,7 @@ import { Badge } from "antd";
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
-  const categories = useCategory();  
+  const categories = useCategory();
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -123,7 +123,7 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-              <NavLink to="/cart" className="nav-link">
+                <NavLink to="/cart" className="nav-link">
                   <Badge count={cart?.length} showZero offset={[10, -5]}>
                     Cart
                   </Badge>
