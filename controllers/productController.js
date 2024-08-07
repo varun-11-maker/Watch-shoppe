@@ -61,7 +61,6 @@ export const createProductController = async (req, res) => {
   }
 };
 
-// //get all products
 export const getProductController = async (req, res) => {
   try {
     const products = await productModel
@@ -85,7 +84,6 @@ export const getProductController = async (req, res) => {
     });
   }
 };
-// // get single product
 export const getSingleProductController = async (req, res) => {
   try {
     const product = await productModel
@@ -107,7 +105,6 @@ export const getSingleProductController = async (req, res) => {
   }
 };
 
-// // get photo
 export const productPhotoController = async (req, res) => {
   try {
     const product = await productModel.findById(req.params.pid).select("photo");
@@ -125,7 +122,7 @@ export const productPhotoController = async (req, res) => {
   }
 };
 
-// //delete controller
+
 export const deleteProductController = async (req, res) => {
   try {
     await productModel.findByIdAndDelete(req.params.pid).select("-photo");
@@ -143,7 +140,6 @@ export const deleteProductController = async (req, res) => {
   }
 };
 
-// //upate producta
 export const updateProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } =
@@ -214,7 +210,7 @@ export const productFiltersController = async (req, res) => {
   }
 };
 
-// // product count
+
 export const productCountController = async (req, res) => {
   try {
     const total = await productModel.find({}).estimatedDocumentCount();
@@ -232,7 +228,6 @@ export const productCountController = async (req, res) => {
   }
 };
 
-// // product list base on page
 export const productListController = async (req, res) => {
   try {
     const perPage = 6;
@@ -257,7 +252,6 @@ export const productListController = async (req, res) => {
   }
 };
 
-// // search product
 export const searchProductController = async (req, res) => {
   try {
     const { keyword } = req.params;
@@ -266,6 +260,7 @@ export const searchProductController = async (req, res) => {
         $or: [
           { name: { $regex: keyword, $options: "i" } },
           { description: { $regex: keyword, $options: "i" } },
+          // options:i -  make case insensitive
         ],
       })
       .select("-photo");
@@ -306,7 +301,6 @@ export const realtedProductController = async (req, res) => {
   }
 };
 
-// // get prdocyst by catgory
 export const productCategoryController = async (req, res) => {
   try {
     const category = await categoryModel.findOne({ slug: req.params.slug });
@@ -326,8 +320,7 @@ export const productCategoryController = async (req, res) => {
   }
 };
 
-// //payment gateway api
-// //token
+
 export const braintreeTokenController = async (req, res) => {
   try {
     gateway.clientToken.generate({}, function (err, response) {
@@ -342,7 +335,6 @@ export const braintreeTokenController = async (req, res) => {
   }
 };
 
-// //payment
 export const brainTreePaymentController = async (req, res) => {
   try {
     const { nonce, cart } = req.body;
