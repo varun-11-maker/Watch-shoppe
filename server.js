@@ -25,9 +25,9 @@ app.use(morgan('dev'))
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/category',categoryRoutes)
 app.use('/api/v1/product',productRoutes)
-app.use(express.static(path.join(__dirname,'./client/build')))
+app.use(express.static(path.join(__dirname,"./client/build")))
 app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname,'./client/build/index.html'))
+    res.sendFile(path.join(__dirname,"./client/build/index.html"))
 })
 app.get('/',(req,res)=>{
     res.send({
