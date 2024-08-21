@@ -18,7 +18,15 @@ Watch Shoppe is a comprehensive e-commerce platform built using the MERN stack. 
 <li>Database: MongoDB</li>
 
 <h2>Usage</h2>
-<li><b>User Features</b></li>
+<li><b>User Features</b>
+<li>Browse Products: Navigate through different categories and view product details.
+</li>
+<li>Add to Cart: Add items to your shopping cart and proceed to checkout.
+</li>
+<li>Checkout: Enter payment details and complete the purchase.
+</li>
+  
+</li>
 
 
 
