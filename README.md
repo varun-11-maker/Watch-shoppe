@@ -11,3 +11,9 @@ Watch Shoppe is a comprehensive e-commerce platform built using the MERN stack. 
 <li>Admin Panel: Manage products, view orders, and handle user accounts.</li>
 <li>Responsive Design: Optimized for both desktop and mobile devices.
 </li>
+<h2>Tech Stack
+</h2>
+<li>Frontend: React.js,bootstrap</li>
+<li>Backend: Node.js, Express.js</li>
+<li>Database: MongoDB</li>
+
