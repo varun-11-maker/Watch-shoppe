@@ -32,6 +32,10 @@ Watch Shoppe is a comprehensive e-commerce platform built using the MERN stack. 
 <li> View Orders: Monitor and manage customer orders.</li>
 
 
+<h1>Live Demo</h1>
+<a href="https://watch-shoppe-4.onrender.com">Watch-shoppe</a>
+
+
 
 
   
